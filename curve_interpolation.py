@@ -5,12 +5,21 @@
 from serialClass import serial
 
 class curve_interpolation(object):
-    def __init__(self):
+    def __init__(self, sorting = 'off'):
+        if sorting == 'on':
+            self.sorting = True
+        else:
+            self.sorting = False
         self.sAll = []
 
     # load spectra data into the object
     def load(self, X, Y, tag):
-        self.sAll.append(serial(X, Y, tag))
+        # if we need to sort X and Y based on X
+        if self.sorting:
+            [sortedX, sortedY] = list(zip(*sorted(zip(X, Y))))
+            self.sAll.append(serial(sortedX, sortedY, tag))
+        else:
+            self.sAll.append(serial(X, Y, tag))
     # a function that takes an array of serial object, 
     # returns True as long as there is a serial object has flag False
     # otherwise returns False

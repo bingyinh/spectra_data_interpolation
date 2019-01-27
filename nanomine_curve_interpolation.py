@@ -63,6 +63,8 @@ class nanomine_curve_interpolation(object):
     # X, an array of Y, and a tag
     # the input etree element at the level of 'Dielectric_Real_Permittivity'
     def ingest(self, childNode):
+        if len(childNode.findall('.//data/data/headers/column')) < 2:
+            raise ValueError('Please check whether all column headers are provided for %s.' %(childNode.tag))
         xlabel = childNode.findall('.//data/data/headers/column')[0]
         ylabel = childNode.findall('.//data/data/headers/column')[1]
         xtext = xlabel.text

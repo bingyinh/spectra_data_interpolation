@@ -116,7 +116,7 @@ class nanomine_curve_interpolation(object):
             # compute the new Y
             X1 = X2
             Y1 = []
-            for i in xrange(len(Y1)):
+            for i in xrange(len(Y2)):
                 Y1.append(Y2[i]*1.0*Y3[i])
             # update the ele
             ele.tag = 'Dielectric_Real_Permittivity'
@@ -189,6 +189,6 @@ class nanomine_curve_interpolation(object):
 ## test
 if __name__ == '__main__':
     # xmlDir = 'D://Dropbox/DIBBS/linda_JAPD/data/L106_S3_Shen_2007.xml-5b71eb00e74a1d7c81bec6c7-5b71ebe4e74a1d7c81bec6f6.xml'
-    xmlDir = 'D://Dropbox/DIBBS/linda_JAPD/data/L143_S3_Hui_2013.xml-5b71eb00e74a1d7c81bec6c7-5b72e778e74a1d68f48b2d6b.xml'
+    xmlDir = 'fortest.xml'
     nmCI = nanomine_curve_interpolation(xmlDir)
     nmCI.run()

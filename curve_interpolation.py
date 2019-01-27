@@ -102,8 +102,8 @@ class curve_interpolation(object):
         
 ## test
 if __name__ == '__main__':
-    X1 = [1,1.5,2,4]
-    Y1 = [1,1.5,2,4]
+    X1 = [1,1.5,2,2,4,4]
+    Y1 = [1,1.5,2,2,4,4]
     tag1 = 'tag1'
     X2 = [2,3,4,5]
     Y2 = [4,6,8,10]

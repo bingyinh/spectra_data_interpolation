@@ -34,4 +34,5 @@ class serial(object):
     # x0: the x of the point to be interpolated
     # x1, y1, x2, y2: coordinates of the known points
     def intp(self, x0, x1, y1, x2, y2):
+        # print('x0:%f, x1:%f, y1:%f, x2:%f, y2:%f' %(x0,x1,y1,x2,y2))
         return y1-(y2-y1)*1.0/(x2-x1)*(x1-x0)

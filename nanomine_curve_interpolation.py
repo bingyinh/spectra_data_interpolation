@@ -119,7 +119,7 @@ class nanomine_curve_interpolation(object):
             X1 = X2
             Y1 = []
             for i in xrange(len(Y2)):
-                Y1.append(Y2[i]*1.0*Y3[i])
+                Y1.append(Y2[i]*1.0/Y3[i])
             # update the ele
             ele.tag = 'Dielectric_Real_Permittivity'
             self.updateCurve(ele, {'X': X1, 'Y': Y1})
@@ -143,7 +143,7 @@ class nanomine_curve_interpolation(object):
             X2 = X1
             Y2 = []
             for i in xrange(len(Y1)):
-                Y2.append(Y1[i]*1.0/Y3[i])
+                Y2.append(Y1[i]*1.0*Y3[i])
             # update the ele
             ele.tag = 'Dielectric_Loss_Permittivity'
             self.updateCurve(ele, {'X': X2, 'Y': Y2})
@@ -167,7 +167,7 @@ class nanomine_curve_interpolation(object):
             X3 = X1
             Y3 = []
             for i in xrange(len(Y1)):
-                Y3.append(Y1[i]*1.0/Y2[i])
+                Y3.append(Y2[i]*1.0/Y1[i])
             # update the ele
             ele.tag = 'Dielectric_Loss_Tangent'
             self.updateCurve(ele, {'X': X3, 'Y': Y3})

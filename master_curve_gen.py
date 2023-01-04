@@ -1,11 +1,11 @@
 from curve_interpolation import curve_interpolation
 
-def run(ep_csv, epp_csv, out_csv, logX, logY, skiprows):
+def run(ep_csv, epp_csv, out_txt, logX, logY, skiprows):
     curve_int = curve_interpolation() # create the curve_interpolation object
     curve_int.master_curve(
         ep_csv=ep_csv,
         epp_csv=epp_csv,
-        mc_file=out_csv,
+        mc_file=out_txt,
         logX=logX,
         logY=logY,
         skiprows=0
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     run(
         ep_csv=args.real_part_csv_dir,
         epp_csv=args.imag_part_csv_dir,
-        out_csv=args.output_csv_dir,
+        out_txt=args.output_txt_dir,
         logX=args.logX,
         logY=args.logY,
         skiprows=args.skiprows

@@ -114,9 +114,9 @@ class curve_interpolation(object):
         return output
     
     # exports master curves in one file
-    def master_curve(self, ep_csv, epp_csv, mc_file='master_curve.txt',logX=True, logY=True):
-        ep = np.loadtxt(ep_csv,delimiter=',')
-        epp = np.loadtxt(epp_csv,delimiter=',')
+    def master_curve(self, ep_csv, epp_csv, mc_file='master_curve.txt',logX=True, logY=True, skiprows=0):
+        ep = np.loadtxt(ep_csv,delimiter=',',skiprows=skiprows)
+        epp = np.loadtxt(epp_csv,delimiter=',',skiprows=skiprows)
         self.load(ep[:,0], ep[:,1], 'ep', logX, logY)
         self.load(epp[:,0], epp[:,1], 'epp', logX, logY)
         self.run()
